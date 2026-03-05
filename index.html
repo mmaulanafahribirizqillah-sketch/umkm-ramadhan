@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Takjil Berkah Buk Ayu - Maniskan Buka Puasamu</title>
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Takjil tradisional Ramadan premium dari Paiton. Kolak pisang, es buah, kurma ajwa, dan kue basah tradisional dengan resep turun-temurun.">
+    
+    <!-- CSS Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Icon Font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage_primary: '#4A7C59',
+                        sage_light: '#E8F3ED',
+                        cream_bg: '#FFFBEB',
+                        cream_dark: '#FEF3C7',
+                        forest_text: '#064E3B',
+                        syrup_red: '#EF4444',
+                        accent_gold: '#D97706'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-cream_bg text-forest_text overflow-x-hidden">
+
+    <!-- Loading Screen -->
+    <div id="loading" class="fixed inset-0 z-[2000] bg-navy_deep flex items-center justify-center">
+        <div class="w-16 h-16 border-4 border-gold border-t-transparent rounded-full animate-spin"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-cream_bg/90 backdrop-blur-md border-b border-sage_primary/10 py-4 px-6 md:px-12 flex justify-between items-center text-forest_text shadow-sm">
+        <div class="flex items-center gap-2">
+            <i class="fas fa-moon text-gold text-2xl"></i>
+            <span class="text-xl md:text-2xl font-bold heading-font uppercase tracking-wider">Takjil Berkah</span>
+        </div>
+        <div class="hidden md:flex gap-8 items-center">
+            <a href="#hero" class="hover:text-gold transition-colors duration-300">Beranda</a>
+            <a href="#menu" class="hover:text-gold transition-colors duration-300">Menu</a>
+            <a href="#promo" class="hover:text-gold transition-colors duration-300">Promo</a>
+            <a href="#testimoni" class="hover:text-gold transition-colors duration-300">Testimoni</a>
+            <a href="#cara-pesan" class="btn-wa btn-sage text-sm py-2 px-6">Pesan Sekarang</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-2xl text-gold">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-navy_deep/95 backdrop-blur-xl flex flex-col items-center justify-center transition-all duration-500 translate-x-full">
+        <button id="close-menu" class="absolute top-8 right-8 text-3xl text-gold">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="flex flex-col items-center gap-8 text-xl font-bold uppercase tracking-widest">
+            <a href="#hero" class="mobile-link text-white hover:text-gold transition-colors">Beranda</a>
+            <a href="#menu" class="mobile-link text-white hover:text-gold transition-colors">Menu</a>
+            <a href="#promo" class="mobile-link text-white hover:text-gold transition-colors">Promo</a>
+            <a href="#testimoni" class="mobile-link text-white hover:text-gold transition-colors">Testimoni</a>
+            <a href="#cara-pesan" class="mobile-link btn-sage px-8 py-3 text-sm">Pesan Sekarang</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <!-- Radial Gradient Background -->
+        <!-- Radial Gradient Background per Reference Image -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_#FFFBEB_0%,_#E8F3ED_100%)]"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#4A7C59_15%)] opacity-[0.03]"></div>
+        
+        <!-- Stars Effect -->
+        <div id="stars-container" class="absolute inset-0 pointer-events-none"></div>
+
+        <!-- Decorative Elements -->
+        <div class="absolute top-20 right-10 md:top-32 md:right-20 pointer-events-none" data-aos="fade-down" data-aos-delay="400">
+            <i class="fas fa-moon text-gold text-7xl md:text-9xl opacity-40 blur-[1px]"></i>
+        </div>
+        <div class="absolute bottom-10 left-10 pointer-events-none lantern" data-aos="fade-up">
+            <img src="https://cdn-icons-png.flaticon.com/512/3238/3238122.png" alt="Lantern" class="w-24 md:w-40 opacity-50 grayscale invert brightness-200">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h1 class="text-4xl md:text-7xl font-bold mb-6 leading-tight text-forest_text" data-aos="zoom-in" data-aos-duration="1000">
+                <span class="">Maniskan Buka Puasamu </span><br>
+                <span class="text-sage_primary">dengan Takjil Berkah</span>
+            </h1>
+            <p class="text-lg md:text-xl text-forest_text/80 mb-10 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="300">
+                Pesan takjil favoritmu dari resep tradisional legendaris Buk Ayu. Siap antar hangat ke depan pintu sebelum adzan Maghrib.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="500">
+                <a href="#menu" class="btn-sage text-lg px-10 py-4 block">Pesan Sekarang</a>
+                <a href="#testimoni" class="border-2 border-sage_primary text-sage_primary hover:bg-sage_primary hover:text-white transition-all duration-300 px-10 py-4 rounded-full font-bold">Lihat Testimoni</a>
+            </div>
+            
+            <!-- Decorative Fruit/Leaves -->
+            <div class="absolute -top-10 left-10 md:left-20 animate-float opacity-40 pointer-events-none">
+                <i class="fas fa-leaf text-4xl text-sage_primary"></i>
+            </div>
+            <div class="absolute top-40 right-10 md:right-40 animate-float-delayed opacity-30 pointer-events-none">
+                <i class="fas fa-lemon text-6xl text-accent_gold"></i>
+            </div>
+            <div class="absolute bottom-20 left-1/4 animate-float opacity-20 pointer-events-none">
+                <i class="fas fa-leaf text-2xl text-sage_primary rotate-45"></i>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <a href="#menu" class="text-gold flex flex-col items-center">
+                <span class="text-xs uppercase mb-2 tracking-[3px]">Scroll</span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-24 bg-fresh-radial relative overflow-hidden">
+        <div class="islamic-pattern absolute inset-0 opacity-10"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4" data-aos="fade-up">Menu Andalan Kami</h2>
+                <div class="w-24 h-1 bg-gold mx-auto rounded-full" data-aos="stretch-x"></div>
+                
+                <!-- Category Filter -->
+                <div class="flex flex-wrap justify-center gap-4 mt-8" data-aos="fade-up">
+                    <button class="px-6 py-2 rounded-full bg-sage_primary text-white font-semibold filter-btn active" data-filter="all">Semua</button>
+                    <button class="px-6 py-2 rounded-full border border-sage_primary text-sage_primary hover:bg-sage_primary/10 filter-btn" data-filter="minuman">Minuman Segar</button>
+                    <button class="px-6 py-2 rounded-full border border-sage_primary text-sage_primary hover:bg-sage_primary/10 filter-btn" data-filter="bubur">Bubur Tradisional</button>
+                    <button class="px-6 py-2 rounded-full border border-sage_primary text-sage_primary hover:bg-sage_primary/10 filter-btn" data-filter="kue">Kue Takjil</button>
+                </div>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="menu-grid">
+                <!-- Kolak Pisang -->
+                <div class="glass-card overflow-hidden group" data-category="bubur" data-aos="fade-up">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="/assets/images/kolak-pisang.jpg" alt="Kolak Pisang" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-sage_primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Best Seller</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Kolak Pisang Legit</h3>
+                        <p class="text-text_sec text-sm mb-4">Pisang kepok pilihan dengan kuah santan gula merah kental dan harum pandan.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sage_primary font-bold text-xl">Rp 10.000</span>
+                            <button class="order-btn bg-white border border-sage_primary text-sage_primary p-2 rounded-full hover:bg-sage_primary hover:text-white transition-colors">
+                                <i class="fas fa-plus px-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Es Buah -->
+                <div class="glass-card overflow-hidden group" data-category="minuman" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="/assets/images/es-buah.jpg" alt="Es Buah" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Es Buah Segar</h3>
+                        <p class="text-text_sec text-sm mb-4">Campuran buah-buahan segar (melon, semangka, nanas) dengan sirup rahasia Buk Ayu.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sage_primary font-bold text-xl">Rp 12.000</span>
+                            <button class="bg-white border border-sage_primary text-sage_primary p-2 rounded-full hover:bg-sage_primary hover:text-white transition-colors">
+                                <i class="fas fa-plus px-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kurma Ajwa -->
+                <div class="glass-card overflow-hidden group" data-category="kue" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="/assets/images/kurma-ajwa.jpg" alt="Kurma Ajwa" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Kurma Ajwa Madinah</h3>
+                        <p class="text-text_sec text-sm mb-4">Kurma ajwa pilihan, tekstur lembut dan manis pas untuk sunnah berbuka.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sage_primary font-bold text-xl">Rp 15.000 <span class="text-xs font-normal text-forest_text">/ 3 pcs</span></span>
+                            <button class="bg-white border border-sage_primary text-sage_primary p-2 rounded-full hover:bg-sage_primary hover:text-white transition-colors">
+                                <i class="fas fa-plus px-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bubur Sumsum -->
+                <div class="glass-card overflow-hidden group" data-category="bubur" data-aos="fade-up">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="/assets/images/bubur-sumsum.jpg" alt="Bubur Sumsum" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Bubur Sumsum Lembut</h3>
+                        <p class="text-text_sec text-sm mb-4">Bubur tepung beras selembut sutra dengan siraman air gula jawa murni.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sage_primary font-bold text-xl">Rp 8.000</span>
+                            <button class="bg-white border border-sage_primary text-sage_primary p-2 rounded-full hover:bg-sage_primary hover:text-white transition-colors">
+                                <i class="fas fa-plus px-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Es Cendol -->
+                <div class="glass-card overflow-hidden group" data-category="minuman" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="/assets/images/es-cendol.jpg" alt="Es Cendol" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Es Cendol Elizabeth</h3>
+                        <p class="text-text_sec text-sm mb-4">Cendol kenyal pandan asli dengan santan gurih dan nangka manis.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sage_primary font-bold text-xl">Rp 10.000</span>
+                            <button class="bg-white border border-sage_primary text-sage_primary p-2 rounded-full hover:bg-sage_primary hover:text-white transition-colors">
+                                <i class="fas fa-plus px-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Putri Salju -->
+                <div class="glass-card overflow-hidden group" data-category="kue" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="/assets/images/putri-salju.jpg" alt="Kue Putri Salju" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Kue Putri Salju</h3>
+                        <p class="text-text_sec text-sm mb-4">Kue kering kacang mete dengan taburan gula halus yang dingin di lidah.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sage_primary font-bold text-xl">Rp 35.000 <span class="text-xs font-normal text-forest_text">/ toples</span></span>
+                            <button class="bg-white border border-sage_primary text-sage_primary p-2 rounded-full hover:bg-sage_primary hover:text-white transition-colors">
+                                <i class="fas fa-plus px-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Ramadan Section -->
+    <section id="promo" class="py-24 bg-fresh-radial relative">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="w-full lg:w-1/2" data-aos="fade-right">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 text-forest_text">Berkah Ramadan Menanti!</h2>
+                    <p class="text-forest_text/80 mb-8 text-lg">Nikmati penawaran khusus selama bulan suci. Kami menghitung mundur waktu menuju momen berbuka yang paling dinanti.</p>
+                    
+                    <!-- Countdown Timer -->
+                    <div class="flex gap-4 mb-10">
+                        <div class="countdown-box">
+                            <span id="hours" class="text-3xl font-bold block text-forest_text">00</span>
+                            <span class="text-[10px] uppercase font-bold tracking-wider text-sage_primary">JAM</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span id="minutes" class="text-3xl font-bold block text-forest_text">00</span>
+                            <span class="text-[10px] uppercase font-bold tracking-wider text-sage_primary">MENIT</span>
+                        </div>
+                        <div class="countdown-box">
+                            <span id="seconds" class="text-3xl font-bold block text-forest_text">00</span>
+                            <span class="text-[10px] uppercase font-bold tracking-wider text-sage_primary">DETIK</span>
+                        </div>
+                        <div class="flex items-center ml-2">
+                            <span class="text-sm font-semibold italic text-sage_primary">Menuju Buka Puasa</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-gold p-6 rounded-2xl text-navy_deep" data-aos="zoom-in">
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-percentage text-4xl"></i>
+                            <div>
+                                <h4 class="font-bold text-xl uppercase">Diskon Berkah 10%</h4>
+                                <p>Minimal pembelian Rp 100.000 untuk pengiriman area Sidodadi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-4" data-aos="fade-left">
+                    <div class="glass-card bg-surface/50 border border-gold/30 p-6 rounded-2xl hover:bg-surface transition-all cursor-pointer">
+                        <h4 class="text-xl font-bold mb-2">Paket Keluarga</h4>
+                        <p class="text-sm text-text_sec mb-4">5 Porsi Kolak + 5 Es Buah</p>
+                        <div class="flex justify-between items-center">
+                            <span class="line-through text-red-400 text-sm">Rp 110.000</span>
+                            <span class="text-gold font-bold">Rp 95.000</span>
+                        </div>
+                    </div>
+                    <div class="glass-card bg-surface/50 border border-gold/30 p-6 rounded-2xl hover:bg-surface transition-all cursor-pointer">
+                        <h4 class="text-xl font-bold mb-2">Paket Ngabuburit</h4>
+                        <p class="text-sm text-text_sec mb-4">Mix 10 Kue Tradisional</p>
+                        <div class="flex justify-between items-center">
+                            <span class="line-through text-red-400 text-sm">Rp 50.000</span>
+                            <span class="text-gold font-bold">Rp 45.000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni Section -->
+    <section id="testimoni" class="py-24 bg-fresh-radial">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <i class="fas fa-star text-sage_primary text-2xl mb-2"></i>
+                <h2 class="text-3xl md:text-5xl font-bold text-forest_text" data-aos="fade-up">Apa Kata Mereka?</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testi 1 -->
+                <div class="bg-surface p-8 rounded-2xl border-l-4 border-gold shadow-xl" data-aos="flip-left">
+                    <div class="flex gap-1 text-gold mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-text_sec italic mb-6">"Kolaknya legit banget! Manisnya pas, santannya kental. Berasa kayak masakan Ibu di rumah. Pengiriman juga tepat waktu."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full border-2 border-gold overflow-hidden">
+                            <img src="https://i.pravatar.cc/150?u=1" alt="User">
+                        </div>
+                        <div>
+                            <h5 class="font-bold">Andi Pratama</h5>
+                            <p class="text-xs text-gold">Pelanggan Setia</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testi 2 -->
+                <div class="bg-surface p-8 rounded-2xl border-l-4 border-gold shadow-xl" data-aos="flip-left" data-aos-delay="100">
+                    <div class="flex gap-1 text-gold mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-text_sec italic mb-6">"Es buahnya segar sekali, isiannya gak pelit. Murah meriah tapi rasanya premium. Cocok buat takjil masjid."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full border-2 border-gold overflow-hidden">
+                            <img src="https://i.pravatar.cc/150?u=2" alt="User">
+                        </div>
+                        <div>
+                            <h5 class="font-bold">Siti Aminah</h5>
+                            <p class="text-xs text-gold">Ibu Rumah Tangga</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testi 3 -->
+                <div class="bg-surface p-8 rounded-2xl border-l-4 border-gold shadow-xl" data-aos="flip-left" data-aos-delay="200">
+                    <div class="flex gap-1 text-gold mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-text_sec italic mb-6">"Bubur sumsumnya lembut parah! Gula merahnya asli. Tiap sore pasti pesan lewat WhatsApp, fast response."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full border-2 border-gold overflow-hidden">
+                            <img src="https://i.pravatar.cc/150?u=3" alt="User">
+                        </div>
+                        <div>
+                            <h5 class="font-bold">Budi Santoso</h5>
+                            <p class="text-xs text-gold">Freelancer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cara Pesan Section -->
+    <section id="cara-pesan" class="py-24 bg-fresh-radial">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-20" data-aos="fade-up">4 Langkah Mudah Pesan Takjil</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
+                <!-- Step 1 -->
+                <div class="text-center relative z-10" data-aos="zoom-in">
+                    <div class="w-20 h-20 bg-sage_primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-3xl shadow-[0_0_25px_rgba(74,124,89,0.3)] border-4 border-white">
+                        <i class="fas fa-list-ul"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Pilih Menu</h4>
+                    <p class="text-text_sec">Lihat katalog menu dan pilih favoritmu.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center relative z-10" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-sage_primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-3xl shadow-[0_0_25px_rgba(74,124,89,0.3)] border-4 border-white">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Chat WhatsApp</h4>
+                    <p class="text-text_sec">Kirim pesananmu melalui chat langsung.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center relative z-10" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-sage_primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-3xl shadow-[0_0_25px_rgba(74,124,89,0.3)] border-4 border-white">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Konfirmasi</h4>
+                    <p class="text-text_sec">Kirim alamat dan konfirmasi total belanja.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="text-center relative z-10" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-sage_primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-3xl shadow-[0_0_25px_rgba(74,124,89,0.3)] border-4 border-white">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Terima di Rumah</h4>
+                    <p class="text-text_sec">Tunggu kurir datang mengantar pesananmu.</p>
+                </div>
+
+                <!-- Timeline Connector Line -->
+                <div class="hidden md:block absolute top-10 left-[10%] right-[10%] h-[2px] border-t-2 border-dashed border-sage_primary/30 z-0"></div>
+            </div>
+
+            <div class="mt-20 bg-navy_deep p-8 rounded-3xl border border-sage_primary/20 flex flex-col md:flex-row items-center gap-8 shadow-2xl" data-aos="fade-up">
+                <div class="flex-1 text-white">
+                    <h4 class="text-2xl font-bold mb-4 flex items-center gap-2 text-white">
+                        <i class="fas fa-map-marker-alt text-white"></i> Info Pengiriman
+                    </h4>
+                    <p class="text-sage_light opacity-90">Kami melayani delivery area <strong>Paiton & Sidodadi</strong>. Ongkos kirim flat Rp 5.000 (Gratis untuk pembelian di atas Rp 50.000). Pesanan diproses mulai pukul 14.00 WIB.</p>
+                </div>
+                <a href="https://wa.me/6282139042221" class="btn-sage flex items-center gap-3 text-white border border-white/20">
+                    <i class="fab fa-whatsapp text-2xl"></i> Chat Admin Sekarang
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black pt-20 pb-10 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy_deep/50 to-transparent pointer-events-none"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <i class="fas fa-moon text-sage_primary text-2xl"></i>
+                        <span class="text-2xl font-bold heading-font uppercase text-white">Takjil Berkah</span>
+                    </div>
+                    <p class="text-white/70 mb-6">Hadir setiap Ramadan untuk menemani ibadah puasamu dengan rasa manis yang halal dan menenangkan.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 border border-gold/50 rounded-full flex items-center justify-center text-gold hover:bg-gold hover:text-navy_deep transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 border border-gold/50 rounded-full flex items-center justify-center text-gold hover:bg-gold hover:text-navy_deep transition-all">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 border border-gold/50 rounded-full flex items-center justify-center text-gold hover:bg-gold hover:text-navy_deep transition-all">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6 text-sage_primary">Jam Operasional</h4>
+                    <ul class="text-white/80 space-y-4">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-clock text-sage_primary"></i> 14.00 - 18.00 WIB
+                        </li>
+                        <li class="flex items-center gap-3 italic">
+                            (Selama Bulan Ramadan)
+                        </li>
+                    </ul>
+                    <h4 class="text-xl font-bold mt-8 mb-6 text-sage_primary">Lokasi</h4>
+                    <p class="text-white/80">
+                        Jl. Raya Sidodadi No. 12<br>
+                        Paiton, Probolinggo
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-6 text-sage_primary">Peta Lokasi</h4>
+                    <div class="rounded-2xl overflow-hidden border border-sage_primary/30 h-48 transition-all">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.535804561842!2d113.4913217!3d-7.7317789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd703cdb62f6d53%3A0xc3f8e58f0059fcd1!2sWarung%20Makan%20Buk%20Ayu!5e0!3m2!1sid!2sid!4v1711234567890" 
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/5 pt-8 text-center">
+                <p class="text-white/50 text-sm">&copy; 2026 Takjil Berkah Sejati. All Rights Reserved.</p>
+            </div>
+        </div>
+
+        <!-- Decorative Lantern -->
+        <div class="absolute bottom-4 right-4 opacity-30 lantern">
+             <i class="fas fa-mosque text-gold text-4xl"></i>
+        </div>
+    </footer>
+
+    <!-- Sticky WhatsApp -->
+    <a href="https://wa.me/6282139042221" class="sticky-whatsapp whatsapp-badge">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JS Dependencies -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
