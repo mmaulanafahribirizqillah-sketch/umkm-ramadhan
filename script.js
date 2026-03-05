@@ -11,17 +11,7 @@ try {
 }
 
 // Remove Loading Screen
-document.addEventListener('DOMContentLoaded', () => {
-    const loader = document.getElementById('loading');
-    if (loader) {
-        setTimeout(() => {
-            loader.style.opacity = '0';
-            setTimeout(() => {
-                loader.style.display = 'none';
-            }, 500);
-        }, 500); // Reduced delay
-    }
-});
+
 
 // Star Generation for Hero Section
 function createStars() {
@@ -193,11 +183,15 @@ const mobileLinks = document.querySelectorAll('.mobile-link');
 if (mobileMenuBtn && closeMenuBtn && mobileMenu) {
     mobileMenuBtn.addEventListener('click', () => {
         mobileMenu.classList.remove('translate-x-full');
+        mobileMenu.style.pointerEvents = 'auto';
+        mobileMenu.style.visibility = 'visible';
         document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
     });
 
     const closeMenu = () => {
         mobileMenu.classList.add('translate-x-full');
+        mobileMenu.style.pointerEvents = 'none';
+        mobileMenu.style.visibility = 'hidden';
         document.body.style.overflow = ''; // Restore scrolling
     };
 

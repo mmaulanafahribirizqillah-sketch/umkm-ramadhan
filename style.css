@@ -284,3 +284,14 @@ h3,
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     z-index: 1000;
 }
+
+#mobile-menu {
+    pointer-events: none;
+    visibility: hidden;
+    transition: all 0.5s ease;
+}
+
+#mobile-menu:not(.translate-x-full) {
+    pointer-events: auto;
+    visibility: visible;
+}
