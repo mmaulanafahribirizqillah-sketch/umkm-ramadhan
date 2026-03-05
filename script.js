@@ -7,14 +7,16 @@ AOS.init({
 });
 
 // Remove Loading Screen
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const loader = document.getElementById('loading');
-    setTimeout(() => {
-        loader.style.opacity = '0';
+    if (loader) {
         setTimeout(() => {
-            loader.style.display = 'none';
-        }, 500);
-    }, 1000);
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500);
+        }, 500); // Reduced delay
+    }
 });
 
 // Star Generation for Hero Section
@@ -100,8 +102,11 @@ filterButtons.forEach(btn => {
 // Smooth Scroll for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return; // Ignore empty anchors
+
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(href);
         if (target) {
             window.scrollTo({
                 top: target.offsetTop - 80,
