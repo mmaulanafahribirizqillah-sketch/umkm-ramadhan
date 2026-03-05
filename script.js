@@ -1,10 +1,14 @@
 // Initialize AOS (Animate On Scroll)
-AOS.init({
-    duration: 1000,
-    easing: 'ease-in-out',
-    once: false,
-    mirror: true
-});
+try {
+    AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: false,
+        mirror: true
+    });
+} catch (e) {
+    console.log("AOS failed to load, skipping animations.");
+}
 
 // Remove Loading Screen
 document.addEventListener('DOMContentLoaded', () => {
