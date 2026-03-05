@@ -119,7 +119,7 @@ function orderProduct(name, price) {
     const phoneNumber = "6282139042221"; // Ganti dengan nomor Buk Ayu yang sebenarnya
     const message = `Halo Buk Ayu, saya ingin memesan:\n\n*Produk:* ${name}\n*Harga:* ${price}\n\nMohon informasi selanjutnya. Terima kasih!`;
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+    window.location.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 }
 
 // General WhatsApp Order (Non-specific product)
@@ -127,7 +127,7 @@ function generalOrder() {
     const phoneNumber = "6282139042221";
     const message = `Halo Buk Ayu, saya ingin tanya-tanya tentang menu takjil hari ini.`;
     const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+    window.location.href = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 }
 
 // Add listeners to general CTA buttons
