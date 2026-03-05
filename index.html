@@ -495,6 +495,57 @@
     </a>
 
     <!-- JS Dependencies -->
-    <script src="script.js"></script>
+    <script>
+        // 1. TIMER LOGIC
+        function updateTimer() {
+            const hEl = document.getElementById('hours');
+            const mEl = document.getElementById('minutes');
+            const sEl = document.getElementById('seconds');
+            if(!hEl) return;
+
+            const now = new Date();
+            const maghrib = new Date();
+            maghrib.setHours(17, 45, 0, 0);
+            if (now > maghrib) maghrib.setDate(maghrib.getDate() + 1);
+
+            const diff = maghrib - now;
+            const h = Math.floor(diff / 3600000);
+            const m = Math.floor((diff % 3600000) / 60000);
+            const s = Math.floor((diff % 60000) / 1000);
+
+            hEl.innerText = h < 0 ? '00' : String(h).padStart(2, '0');
+            mEl.innerText = m < 0 ? '00' : String(m).padStart(2, '0');
+            sEl.innerText = s < 0 ? '00' : String(s).padStart(2, '0');
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        // 2. FILTER MENU LOGIC
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.onclick = function() {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('bg-sage_primary', 'text-white');
+                    b.classList.add('border-sage_primary', 'text-sage_primary');
+                });
+                this.classList.add('bg-sage_primary', 'text-white');
+                this.classList.remove('border-sage_primary', 'text-sage_primary');
+
+                const filter = this.getAttribute('data-filter');
+                document.querySelectorAll('#menu-grid > a').forEach(item => {
+                    item.style.display = (filter === 'all' || item.getAttribute('data-category') === filter) ? 'block' : 'none';
+                });
+            };
+        });
+
+        // 3. NAV LOGIC
+        const mBtn = document.getElementById('mobile-menu-btn');
+        const cBtn = document.getElementById('close-menu');
+        const mMenu = document.getElementById('mobile-menu');
+        if(mBtn && mMenu) {
+            mBtn.onclick = () => { mMenu.classList.remove('translate-x-full'); mMenu.style.visibility='visible'; mMenu.style.pointerEvents='auto'; };
+            cBtn.onclick = () => { mMenu.classList.add('translate-x-full'); mMenu.style.visibility='hidden'; mMenu.style.pointerEvents='none'; };
+            document.querySelectorAll('.mobile-link').forEach(l => l.onclick = cBtn.onclick);
+        }
+    </script>
 </body>
 </html>
